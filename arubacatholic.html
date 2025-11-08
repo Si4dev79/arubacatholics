@@ -6,8 +6,12 @@
   <title>Catholic Churches of Aruba</title>
   <meta name="description" content="Find Catholic churches in Aruba — maps, official links, and recent updates in one place." />
 
-  <!-- Elegant fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ CSP relaxed for GitHub Pages -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src * data: blob: 'unsafe-inline' 'unsafe-eval';">
 
   <style>
     :root {
@@ -20,7 +24,7 @@
     html,body{margin:0;padding:0;height:100%;font-family:Lato,system-ui;color:var(--text);}
     a{color:inherit;text-decoration:none;}
 
-    /* Parallax background setup */
+    /* Parallax Background */
     body::before {
       content:"";
       position:fixed;
@@ -28,7 +32,6 @@
       background:url('https://upload.wikimedia.org/wikipedia/commons/f/f9/Alto_Vista_Chapel_Aruba.jpg') center/cover no-repeat;
       transform:translateY(0);
       z-index:-2;
-      transition:transform 0.1s linear;
     }
     body::after {
       content:"";
@@ -36,7 +39,6 @@
       top:0;left:0;width:100%;height:100%;
       background:linear-gradient(to bottom,var(--overlay) 20%,rgba(0,0,0,0.9));
       z-index:-1;
-      transition:opacity 0.2s ease;
     }
 
     .container{max-width:1100px;margin:auto;padding:24px;}
@@ -126,18 +128,7 @@
     <footer>© <span id="yr"></span> Aruba Catholic Links • External links verified</footer>
   </div>
 
-  <script>
-    // Simple parallax scroll effect
-    window.addEventListener('scroll',()=>{
-      const scrolled = window.scrollY;
-      document.body.style.setProperty('--scroll', scrolled);
-      document.body.style.setProperty('--overlay', `rgba(11,18,32,${0.78 + Math.min(scrolled/1000,0.15)})`);
-      document.body.beforeEl = document.body.beforeEl || document.querySelector('body::before');
-      document.body.style.setProperty('--scrollY', scrolled * 0.3);
-      document.body.style.backgroundPositionY = `${scrolled * 0.2}px`;
-      document.body.style.backgroundAttachment='fixed';
-    });
-
+  <script type="text/javascript">
     const CHURCHES=[
       {name:"Alto Vista Chapel",area:"Noord",address:"Alto Vista Noord",
        updates:"https://diocesewillemstad.com/parishes/",
@@ -183,6 +174,12 @@
       render(out);
     }
     q.addEventListener('input',filter);region.addEventListener('change',filter);render(CHURCHES);
+
+    // Simple parallax movement on scroll
+    window.addEventListener('scroll',()=>{
+      const scrolled = window.scrollY;
+      document.body.style.backgroundPositionY = `${scrolled * 0.3}px`;
+    });
   </script>
 </body>
 </html>
