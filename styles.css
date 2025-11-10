@@ -164,3 +164,95 @@ footer {
 @media (max-width: 550px) {
   .church-grid { grid-template-columns: 1fr; }
 }
+/* --- Mobile and Tablet Responsive Tweaks --- */
+
+/* Tablets (max 1024px) */
+@media (max-width: 1024px) {
+  .hero-content {
+    width: 95%;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .brand-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .church-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .church-card h2 {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+  }
+}
+
+/* Phones (max 700px) */
+@media (max-width: 700px) {
+  body {
+    font-size: 15px;
+  }
+
+  .hero-content {
+    width: 95%;
+    border-radius: 18px;
+    padding: 1rem;
+  }
+
+  .brand {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .brand-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .brand-text h1 {
+    font-size: 1.3rem;
+  }
+
+  .brand-text p {
+    font-size: 0.9rem;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .filters input,
+  .filters select {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .latest {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+  }
+
+  .church-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .church-card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 0.8rem 0;
+  }
+}
+
