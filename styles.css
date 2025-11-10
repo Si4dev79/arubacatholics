@@ -1,0 +1,166 @@
+/* Base layout and font */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #f1f3fa;
+  background: radial-gradient(circle at 25% 25%, #2a2d3b 0%, #0f1117 85%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----- HERO / HEADER BOX ----- */
+.hero-box {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.5rem;
+}
+
+.hero-content {
+  width: 92%;
+  max-width: 950px;
+  background: rgba(30, 32, 45, 0.98);
+  border-radius: 25px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: radial-gradient(circle at 35% 30%, #ffcf54, #d49b20);
+  box-shadow: 0 0 25px rgba(255, 210, 70, 0.6);
+}
+
+.brand-text h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 0;
+}
+
+.brand-text p {
+  color: #b8bbcc;
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+}
+
+/* ----- FILTERS ----- */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 1.4rem 0;
+}
+
+.filters input,
+.filters select {
+  background: #20232e;
+  color: #e8eaf1;
+  border: 1px solid #383b4b;
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 0.95rem;
+  min-width: 220px;
+  outline: none;
+}
+
+.latest {
+  background: #161824;
+  border-radius: 10px;
+  color: #cdd0e2;
+  padding: 0.7rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ----- CHURCH GRID ----- */
+.church-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.4rem;
+  padding: 2rem 3.5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* deep navy cards to match screenshot */
+.church-card {
+  background: linear-gradient(160deg, #1d2740 0%, #161c2c 100%);
+  border-radius: 16px;
+  padding: 1.3rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.65), inset 0 0 6px rgba(20, 25, 50, 0.4);
+  border: 1px solid rgba(60, 90, 160, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.church-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.7);
+}
+
+.church-card h2 {
+  margin-top: 0;
+  color: #e7ebff;
+  font-size: 1.05rem;
+}
+
+.church-card p {
+  color: #aab0cc;
+  font-size: 0.88rem;
+  margin: 0.4rem 0 0.8rem;
+}
+
+/* ----- BUTTONS ----- */
+.btns {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.btn {
+  flex: 1;
+  text-align: center;
+  padding: 7px 0;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #e9ecff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #fff;
+}
+
+/* ----- FOOTER ----- */
+footer {
+  text-align: center;
+  padding: 1rem 0 1.2rem;
+  color: #8c91a4;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: auto;
+}
+
+/* ----- RESPONSIVE ADJUSTMENTS ----- */
+@media (max-width: 800px) {
+  .hero-content { padding: 1.2rem; }
+  .church-grid { padding: 1.2rem 1.5rem; gap: 1rem; }
+}
+@media (max-width: 550px) {
+  .church-grid { grid-template-columns: 1fr; }
+}
